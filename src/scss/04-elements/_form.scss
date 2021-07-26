@@ -1,0 +1,389 @@
+// standard input elements
+input, output, textarea, select, button, .button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: $type_body_bold;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  width: 10em;
+  max-width: 20em;
+  margin: 3px;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px $color_back_0 inset;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+::placeholder {
+  color: $color_hint_1;
+}
+
+input, textarea, select {
+  appearance: none;
+  padding: 1em;
+  color: $color_fore_0;
+  background-color: $color_back_0;
+  border: 1px solid $color_hint_1;
+  border-radius: $layout_border_radius;
+  outline: 0 none;
+
+  &:focus {
+    color: $color_fore_0;
+    border-color: $color_hint_0;
+  }
+
+}
+
+input, textarea {
+
+  &:disabled, &:read-only {
+    color: $color_hint_1;
+    background-color: $color_hint_1;
+  }
+
+}
+
+// select
+select {
+  background-image: inline('navdown.svg');
+  background-position: calc(100% - 1em) 50%;
+  background-size: 0.8em auto;
+  background-repeat: no-repeat;
+
+  &:disabled {
+    color: $color_hint_1;
+    background-color: $color_hint_1;
+  }
+
+}
+
+// text area
+textarea {
+  overflow: auto;
+}
+
+label, button {
+  cursor: pointer;
+  user-select: none;
+}
+
+// label
+label, .validity {
+  display: block;
+  font-size: 0.875em;
+  font-weight: $type_body_bold;
+  padding-left: 1rem;
+  color: $color_hint_1;
+}
+
+// search
+input[type="search"] {
+  padding-left: 2.5em;
+  background-image: inline("search.svg");
+  background-position: 1em 50%;
+  background-size: 1em auto;
+  background-repeat: no-repeat;
+}
+
+// checkbox and radio
+input[type="checkbox"], input[type="radio"] {
+
+  background-color: inherit;
+
+  &, & + label, & + label::before, & + label::after {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+}
+
+$checkboxspace: 2.5em;
+$checkboxsize: 1.7em;
+
+input[type="checkbox"], input[type="radio"] {
+
+  width: $checkboxspace;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  outline: none;
+
+  & + label {
+
+    position: relative;
+    padding: 0;
+
+    &::before, &::after {
+      position: absolute;
+      left: -$checkboxspace;
+      content: '';
+      width: $checkboxsize;
+      height: $checkboxsize;
+      background-color: $color_back_0;
+      border: 1px solid $color_hint_1;
+      border-radius: $layout_border_radius;
+    }
+
+    &::after {
+      transition: transform 0.1s cubic-bezier(0.2, 0.1, 1, 2);
+    }
+
+  }
+
+  &:checked + label, &:focus + label {
+
+    color: $color_fore_0;
+
+    &::before {
+      border-color: $color_hint_0;
+    }
+
+  }
+
+}
+
+input[type="radio"] {
+
+  & + label::before {
+
+    border-radius: 50%;
+
+  }
+
+  & + label::after {
+
+    width: calc($checkboxsize * 0.5);
+    height: calc($checkboxsize * 0.5);
+    left: calc(0.25 * $checkboxsize - $checkboxspace);
+    top: calc(0.25 * $checkboxsize);
+    background-color: $color_hint_0;
+    border: 0 none;
+    border-radius: 50%;
+    transform: scale(0);
+
+  }
+
+  &:checked + label::after {
+    transform: scale(1);
+  }
+
+}
+
+input[type="checkbox"] {
+
+  & + label::after {
+
+    width: calc($checkboxsize * 0.5);
+    height: calc($checkboxsize * 0.3);
+    left: calc(0.25 * $checkboxsize - $checkboxspace);
+    top: calc(0.3 * $checkboxsize);
+    border: 2px solid $color_hint_0;
+    border-style: none none solid solid;
+    border-radius: 0;
+    transform: rotate(-45deg) scale(0);
+
+  }
+
+  &:checked + label::after {
+    transform: rotate(-45deg) scale(1);
+  }
+
+}
+
+// range
+@mixin range-track {
+  height: 4px;
+  background: $color_hint_1;
+}
+
+@mixin range-thumb {
+  appearance: none;
+  width: 1.4em;
+  height: 1.4em;
+  background-color: $color_back_0;
+  border: 2px solid $color_hint_0;
+  border-radius: 50%;
+}
+
+@mixin range-thumb-focus {
+  background-color: $color_hint_0;
+}
+
+input[type="range"] {
+  padding: 1em 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include range-track;
+  }
+
+  &::-moz-range-track {
+    @include range-track;
+  }
+
+  &::-webkit-slider-thumb {
+    @include range-thumb;
+    margin-top: calc(-0.7em + 2px);
+  }
+
+  &:focus::-webkit-slider-thumb {
+    @include range-thumb-focus;
+  }
+
+  &::-moz-range-thumb {
+    @include range-thumb;
+  }
+
+  &:focus::-moz-range-thumb {
+    @include range-thumb-focus;
+  }
+
+}
+
+// standard button
+a.button {
+
+  &:link, &:visited, &:hover, &:focus, &:active {
+    text-decoration: none;
+    color: $color_back_0;
+  }
+
+}
+
+button, .button {
+
+  appearance: none;
+  display: inline-block;
+  min-width: 10em;
+  text-align: center;
+  white-space: nowrap;
+  line-height: normal;
+  padding: 0.9em;
+  color: $color_back_0;
+  background-color: $color_hint_0;
+  border: 1px solid $color_hint_0;
+  border-radius: $layout_border_radius;
+  outline: 0 none;
+
+  &:hover, &:focus {
+    background-color: $color_hint_1;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $color_hint_1;
+  }
+
+  &.processing {
+
+    background-color: $color_hint_1;
+
+    &::before {
+      display: inline-block;
+      vertical-align: text-top;
+      content: '';
+      width: 1em;
+      height: 1em;
+      margin-right: 0.5em;
+      border: 2px solid $color_back_0;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  &:disabled {
+    background-color: $color_hint_1;
+  }
+
+}
+
+// fit content button
+button.fit, .button.fit {
+  width: auto;
+  min-width: auto;
+}
+
+// small button
+button.small, .button.small {
+
+  width: 10em;
+  min-width: 6em;
+  text-align: center;
+  line-height: normal;
+  padding: 0.5em;
+
+}
+
+// validation
+.validity {
+  display: none;
+  font-weight: $type_body_normal;
+  color: $color_red;
+}
+
+p.validity {
+  margin-top: 0.25em;
+  padding-bottom: 1em;
+}
+
+.invalid {
+
+  input, textarea, select {
+    &, &:focus {
+      border-color: $color_red;
+    }
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+    & + label::before {
+      border-color: $color_red;
+    }
+  }
+
+  label {
+    color: $color_red;
+  }
+
+  .validity {
+    display: block;
+  }
+
+}
+
+.formlinear {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $layout_padding;
+
+  & > div {
+
+    position: relative;
+
+    label:first-child {
+      position: absolute;
+      top: -0.6em;
+      left: 0.6rem;
+      padding: 0 0.5rem;
+      background-color: $color_back_0;
+    }
+
+    &:focus-within:not(.invalid) > label {
+      color: $color_hint_0;
+    }
+
+  }
+
+}

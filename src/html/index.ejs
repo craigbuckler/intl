@@ -1,0 +1,89 @@
+<% meta.title = 'date and time internationalization' %>
+<% meta.menuActive = 'date' %>
+<%- include('./partials/_pagehead.html', { meta }) -%>
+<%- include('./partials/_header.html', { meta }) -%>
+
+<main><div>
+
+  <form id="translate" class="formlinear">
+
+    <div>
+      <label for="date">date</label>
+      <input type="date" id="date" name="date" value="2025-09-05" required />
+    </div>
+
+    <div>
+      <label for="time">time</label>
+      <input type="time" id="time" name="time" value="01:23" required />
+    </div>
+
+    <div>
+      <label for="hour12">time type</label>
+      <select id="hour12" name="hour12">
+        <option value="">24 hour</option>
+        <option value="true">12 hour</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="dateStyle">date style</label>
+      <select id="dateStyle" name="dateStyle">
+        <option value="">none</option>
+        <option>short</option>
+        <option>medium</option>
+        <option>long</option>
+        <option>full</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="timeStyle">time style</label>
+      <select id="timeStyle" name="timeStyle">
+        <option value="">none</option>
+        <option>short</option>
+        <option>medium</option>
+        <option>long</option>
+        <option>full</option>
+      </select>
+    </div>
+
+  </form>
+
+  <div class="scroller">
+    <table id="datetable" summary="translation">
+      <thead>
+        <tr><th>locale</th><th class="value">date / time</th>
+      </thead>
+      <tbody id="result">
+        <tr><th title="your locale">default</th><td></td></tr>
+        <tr><th title="US English">en-US</th><td></td></tr>
+        <tr><th title="UK English">en-GB</th><td></td></tr>
+        <tr><th title="Canadian English">en-CA</th><td></td></tr>
+        <tr><th title="Australian English">en-AU</th><td></td></tr>
+        <tr><th title="Spanish">es-ES</th><td></td></tr>
+        <tr><th title="Mexican Spanish">es-MX</th><td></td></tr>
+        <tr><th title="French">fr-FR</th><td></td></tr>
+        <tr><th title="German">de-DE</th><td></td></tr>
+        <tr><th title="Italian">it-IT</th><td></td></tr>
+        <tr><th title="Portuguese">pt-PT</th><td></td></tr>
+        <tr><th title="Polish">pl-PL</th><td></td></tr>
+        <tr><th title="Welsh">cy-GB</th><td></td></tr>
+        <tr><th title="Icelandic">is-IS</th><td></td></tr>
+        <tr><th title="Kazakh">kk-KZ</th><td></td></tr>
+        <tr><th title="Afrikaans">af-AF</th><td></td></tr>
+        <tr><th title="Zulu">zu-ZU</th><td></td></tr>
+        <tr><th title="Russian">ru-RU</th><td></td></tr>
+        <tr><th title="Arabic (Saudi Arabia)">ar-SA</th><td></td></tr>
+        <tr><th title="Hebrew">he-HE</th><td></td></tr>
+        <tr><th title="Bengali">bn-BN</th><td></td></tr>
+        <tr><th title="Vietnamese">vi-VI</th><td></td></tr>
+        <tr><th title="Chinese">zh-CN</th><td></td></tr>
+        <tr><th title="Japanese">ja-JP</th><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div></main>
+
+<%- include('./partials/_footer.html', { meta }) -%>
+<%- include('./partials/_pagefoot.html', { meta }) -%>

@@ -1,0 +1,12 @@
+// page content
+body > main > *, body > aside > *, header > *, footer > *, .main > *, .pagecontain {
+  max-width: $layout_page_width;
+  padding: 0 2vw;
+  margin: 0 auto;
+}
+
+main, aside, .main {
+
+  padding-bottom: calc(4 * $layout_padding);
+
+}

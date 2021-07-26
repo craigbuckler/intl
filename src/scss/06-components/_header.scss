@@ -1,0 +1,71 @@
+header {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $layout_header_height;
+  background-color: $color_back_1;
+  z-index: 1;
+
+  nav, p, ul, li, a {
+    height: 100%;
+    @include resetlist;
+  }
+
+  nav, ul {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  ul {
+    margin-left: auto;
+  }
+
+  a:link, a:visited {
+    display: block;
+    line-height: $layout_header_height;
+    outline-offset: 0;
+  }
+
+  ul a {
+    font-weight: $type_body_bold;
+    text-align: center;
+    padding: 0 0.5em;
+  }
+
+  .active {
+    background-color: $color_back_0;
+  }
+
+  & + * {
+    padding-top: calc($layout_header_height + (1.5 * $layout_padding));
+  }
+
+}
+
+#logo {
+
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+
+  a {
+    font-size: 2em;
+    letter-spacing: -0.05em;
+    outline: none;
+    color: $color_fore_0;
+  }
+
+  svg {
+    height: 70%;
+    vertical-align: middle;
+  }
+
+}
+
+h1, h2, h3, *:target, .invalid {
+  scroll-margin-top: calc($layout_header_height + (1.5 * $layout_padding));
+}

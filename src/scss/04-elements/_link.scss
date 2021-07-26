@@ -1,0 +1,20 @@
+// link and hover effects
+a:link, a:visited {
+
+  text-decoration: none;
+  color: $color_hint_0;
+
+}
+
+a:hover, a:active {
+
+  color: $color_hint_1;
+
+}
+
+a:focus-visible {
+
+  outline: 2px dotted $color_hint_0;
+  outline-offset: 0.5rem;
+
+}

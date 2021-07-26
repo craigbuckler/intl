@@ -1,0 +1,31 @@
+// headings
+h1, h2, h3, h4 {
+  font-family: $type_head_font;
+  font-weight: $type_head_bold;
+  line-height: $type_head_lineheight;
+  margin-top: 1.5em;
+}
+
+h1 {
+  $h1_min: calc($type_head_size_1 / 2);
+  font-size: $type_head_size_1;
+  font-size: clamp($h1_min, calc($h1_min + 2vw), $type_head_size_1);
+}
+
+h2 {
+  $h2_min: calc($type_head_size_2 / 2);
+  font-size: $type_head_size_2;
+  font-size: clamp($h2_min, calc($h2_min + 1.75vw), $type_head_size_2);
+}
+
+h3 {
+  $h3_min: calc($type_head_size_3 / 2);
+  font-size: $type_head_size_3;
+  font-size: clamp($h3_min, calc($h3_min + 1.5vw), $type_head_size_3);
+}
+
+h4 {
+  $h4_min: calc($type_head_size_4 / 2);
+  font-size: $type_head_size_4;
+  font-size: clamp($h4_min, calc($h4_min + 1.5vw), $type_head_size_4);
+}

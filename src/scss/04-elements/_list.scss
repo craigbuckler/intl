@@ -1,0 +1,14 @@
+// ordered and unordered lists
+ul, ol {
+  list-style-type: square;
+  margin: $layout_padding 0 $layout_padding calc(3 * $layout_padding);
+}
+
+ol {
+  list-style: decimal;
+}
+
+li {
+  padding-left: $layout_padding;
+  margin-top: $layout_padding;
+}

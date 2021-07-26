@@ -1,0 +1,20 @@
+html {
+  scroll-behavior: smooth;
+  touch-action: manipulation;
+  background-color: $color_back_0;
+}
+
+html, body {
+  font-size: 1rem;
+  min-height: 100%;
+  color: $color_fore_0;
+}
+
+body {
+  font-family: $type_body_font;
+  font-weight: $type_body_normal;
+  line-height: $type_body_lineheight;
+  background-color: $color_back_0;
+  overflow-x: auto;
+  overflow-y: scroll;
+}

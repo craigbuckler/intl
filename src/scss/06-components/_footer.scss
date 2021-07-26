@@ -1,0 +1,23 @@
+footer {
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: $layout_padding 0;
+  background-color: $color_back_1;
+  z-index: 1;
+
+  ul {
+    font-size: $type_body_size_1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include resetlist;
+  }
+
+  a {
+    padding: calc(0.25 * $layout_padding) calc(0.5 * $layout_padding);
+  }
+
+}

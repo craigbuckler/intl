@@ -1,0 +1,26 @@
+{
+	"lang"							: "en-gn",
+	"dir"								: "ltr",
+	"name"							: "Intl",
+	"short_name"				: "Intl",
+	"description"				: "JavaScript internationalization code generator",
+  "categories"        : [ "intl", "i18n", "internationalization", "language", "locale", "translate" ],
+	"scope"							: "./",
+	"start_url"					: "./",
+	"display"						: "standalone",
+  "orintation"        : "any",
+	"theme_color"				: "#fbfbfb",
+	"background_color"	: "#fbfbfb",
+	"icons": [
+		{
+      "src"           : "./media/favicons/favicon-192.png",
+      "sizes"         : "192x192",
+      "type"          : "image/png"
+    },
+    {
+      "src"           : "./media/favicons/favicon-512.png",
+      "sizes"         : "512x512",
+      "type"          : "image/png"
+    }
+	]
+}

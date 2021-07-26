@@ -1,0 +1,34 @@
+// block styles
+p {
+  margin-top: 1em;
+}
+
+svg {
+  height: 1.5em;
+  vertical-align: middle;
+}
+
+strong, b {
+  font-weight: $type_body_bold;
+}
+
+pre, code {
+  font-family: monospace;
+  font-size: 1rem;
+  padding: 0.2em 0.5em;
+  color: $color_back_0;
+  background-color: $color_hint_0;
+  border: 1px solid $color_back_0;
+  border-radius: $layout_border_radius;
+}
+
+pre {
+  width: 100%;
+  margin: $layout_padding 0 calc(2 * $layout_padding) 0;
+  overflow: auto;
+
+  code {
+    padding: 0;
+    border: 0 none;
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "intl",
+  "version": "1.0.0",
+  "description": "A tool to generate internationalization (i18n) code using the JavaScript Intl API.",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "clean": "rm -rf build",
+    "init": "npm run clean && npm run final:htm && cp ./src/media ./build -r && cp ./src/root/* ./build -r",
+    "final:htm": "ejs-render --input=./src/html --data=./tokens.json --output=./build",
+    "watch:htm": "ejs-render --input=./src/html/ --data=./tokens.json --output=./build --watch",
+    "build:css": "postcss src/scss/main.scss -o build/css/main.css --no-map",
+    "watch:css": "postcss src/scss/main.scss -o build/css/main.css --env development -m -w --verbose",
+    "build:es6": "rollup --config",
+    "watch:es6": "rollup --config --environment NODE_ENV:development --sourcemap --watch --no-watch.clearScreen",
+    "watch:srv": "browser-sync start --config browsersync.config.cjs",
+    "build": "npm run init && concurrently 'npm:build:*'",
+    "start": "npm run init && concurrently 'npm:watch:*'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://craigbuckler@bitbucket.org/macrohive-new/style-guide.git"
+  },
+  "keywords": [
+    "code",
+    "generation",
+    "tool",
+    "JavaScript",
+    "i18n",
+    "Intl",
+    "Internationalization",
+    "API"
+  ],
+  "author": "Craig Buckler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/craigbuckler/intl/issues"
+  },
+  "homepage": "https://github.com/craigbuckler/intl",
+  "devDependencies": {
+    "@rollup/plugin-replace": "3.0.0",
+    "autoprefixer": "10.3.1",
+    "browser-sync": "2.27.4",
+    "concurrently": "6.2.0",
+    "cssnano": "5.0.7",
+    "ejs-render": "1.0.3",
+    "postcss": "8.3.6",
+    "postcss-advanced-variables": "3.0.1",
+    "postcss-assets": "6.0.0",
+    "postcss-calc": "8.0.0",
+    "postcss-cli": "8.3.1",
+    "postcss-combine-media-query": "1.0.1",
+    "postcss-map-get": "0.3.0",
+    "postcss-nested": "5.0.5",
+    "postcss-scss": "4.0.0",
+    "rollup": "2.54.0",
+    "rollup-plugin-terser": "7.0.2"
+  }
+}
