@@ -1,0 +1,53 @@
+<% meta.title = 'relative period internationalization' %>
+<% meta.menuActive = 'relative' %>
+<%- include('./partials/_pagehead.html', { meta }) -%>
+<%- include('./partials/_header.html', { meta }) -%>
+
+<main><div>
+
+  <form id="translate" class="formlinear">
+
+    <div>
+      <label for="number">number</label>
+      <input type="number" id="number" name="number" value="10" required />
+    </div>
+
+    <div>
+      <label for="unit">unit</label>
+      <select id="unit" name="unit">
+        <option>year</option>
+        <option>quarter</option>
+        <option>month</option>
+        <option>week</option>
+        <option>day</option>
+        <option>hour</option>
+        <option>minute</option>
+        <option>second</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="numeric">show number</label>
+      <select id="numeric" name="numeric">
+        <option value="">always</option>
+        <option>auto</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="style">style</label>
+      <select id="style" name="style">
+        <option value="">long</option>
+        <option>short</option>
+        <option>narrow</option>
+      </select>
+    </div>
+
+  </form>
+
+  <%- include('./partials/_table.html', { meta }) -%>
+
+</div></main>
+
+<%- include('./partials/_footer.html', { meta }) -%>
+<%- include('./partials/_pagefoot.html', { meta }) -%>

@@ -1,0 +1,125 @@
+<% meta.title = 'display names internationalization' %>
+<% meta.menuActive = 'name' %>
+<%- include('./partials/_pagehead.html', { meta }) -%>
+<%- include('./partials/_header.html', { meta }) -%>
+
+<main><div>
+
+  <form id="translate" class="formlinear">
+
+    <div>
+      <label for="type">type</label>
+      <select id="type" name="type">
+        <option>language</option>
+        <option>region</option>
+        <option>script</option>
+        <option>currency</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="style">style</label>
+      <select id="style" name="style">
+        <option value="">long</option>
+        <option>short</option>
+        <option>narrow</option>
+      </select>
+    </div>
+
+    <hr />
+
+    <div>
+      <label for="language">language</label>
+      <select id="language" name="language">
+        <option>en</option>
+        <option>en-US</option>
+        <option>en-GB</option>
+        <option>en-CA</option>
+        <option>en-AU</option>
+        <option>es-ES</option>
+        <option>es-MX</option>
+        <option>fr-FR</option>
+        <option>de-DE</option>
+        <option>it-IT</option>
+        <option>pt-PT</option>
+        <option>pl-PL</option>
+        <option>cy-GB</option>
+        <option>is-IS</option>
+        <option>kk-KZ</option>
+        <option>af-AF</option>
+        <option>zu-ZU</option>
+        <option>ru-RU</option>
+        <option>ar-SA</option>
+        <option>he-HE</option>
+        <option>bn-BN</option>
+        <option>vi-VI</option>
+        <option>zh-CN</option>
+        <option>ja-JP</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="region">region</label>
+      <select id="region" name="region">
+        <option>US</option>
+        <option>GB</option>
+        <option>CA</option>
+        <option>AU</option>
+        <option>ES</option>
+        <option>MX</option>
+        <option>FR</option>
+        <option>DE</option>
+        <option>IT</option>
+        <option>PT</option>
+        <option>PL</option>
+        <option>IS</option>
+        <option>KZ</option>
+        <option>AF</option>
+        <option>ZA</option>
+        <option>RU</option>
+        <option>SA</option>
+        <option>BN</option>
+        <option>VI</option>
+        <option>CN</option>
+        <option>JP</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="script">script</label>
+      <select id="script" name="script">
+        <option>Arab</option>
+        <option>Brai</option>
+        <option>Cyrl</option>
+        <option>Egyp</option>
+        <option>Goth</option>
+        <option>Jpan</option>
+        <option>Latn</option>
+        <option>Runr</option>
+        <option>Xpeo</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="currency">currency</label>
+      <select id="currency" name="currency">
+        <option>USD</option>
+        <option>EUR</option>
+        <option>GBP</option>
+        <option>CAD</option>
+        <option>AUD</option>
+        <option>ZAR</option>
+        <option>INR</option>
+        <option>CNY</option>
+        <option>JPY</option>
+      </select>
+    </div>
+
+  </form>
+
+  <%- include('./partials/_table.html', { meta }) -%>
+
+</div></main>
+
+<%- include('./partials/_footer.html', { meta }) -%>
+<%- include('./partials/_pagefoot.html', { meta }) -%>

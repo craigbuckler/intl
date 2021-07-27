@@ -1,0 +1,196 @@
+<% meta.title = 'unit internationalization' %>
+<% meta.menuActive = 'unit' %>
+<%- include('./partials/_pagehead.html', { meta }) -%>
+<%- include('./partials/_header.html', { meta }) -%>
+
+<main><div>
+
+  <form id="translate" class="formlinear">
+
+    <div>
+      <label for="number">number</label>
+      <input type="number" id="number" name="number" value="12345.6789" required />
+    </div>
+
+    <div>
+      <label for="style">style</label>
+      <select id="style" name="style">
+        <option value="">decimal</option>
+        <option>currency</option>
+        <option>percent</option>
+        <option>unit</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="notation">notation</label>
+      <select id="notation" name="notation">
+        <option value="">standard</option>
+        <option>scientific</option>
+        <option>engineering</option>
+        <option>compact</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="numberingSystem">numbering</label>
+      <select id="numberingSystem" name="numberingSystem">
+        <option value="">default</option>
+        <option>arab</option>
+        <option>arabext</option>
+        <option>bali</option>
+        <option>beng</option>
+        <option>deva</option>
+        <option>fullwide</option>
+        <option>gujr</option>
+        <option>guru</option>
+        <option>hanidec</option>
+        <option>khmr</option>
+        <option>knda</option>
+        <option>laoo</option>
+        <option>latn</option>
+        <option>limb</option>
+        <option>mlym</option>
+        <option>mong</option>
+        <option>mymr</option>
+        <option>orya</option>
+        <option>tamldec</option>
+        <option>telu</option>
+        <option>thai</option>
+        <option>tibt</option>
+      </select>
+    </div>
+
+    <hr />
+
+    <div>
+      <label for="minimumIntegerDigits">min int digits</label>
+      <input type="number" id="minimumIntegerDigits" name="minimumIntegerDigits" value="" min="1" max="21" />
+    </div>
+
+    <div>
+      <label for="minimumFractionDigits">min frac digits</label>
+      <input type="number" id="minimumFractionDigits" name="minimumFractionDigits" value="" min="0" max="20" />
+    </div>
+
+    <div>
+      <label for="maximumFractionDigits">max frac digits</label>
+      <input type="number" id="maximumFractionDigits" name="maximumFractionDigits" value="" min="0" max="20" />
+    </div>
+
+    <div>
+      <label for="minimumSignificantDigits">min sig digits</label>
+      <input type="number" id="minimumSignificantDigits" name="minimumSignificantDigits" value="" min="1" max="21" />
+    </div>
+
+    <div>
+      <label for="maximumSignificantDigits">max sig digits</label>
+      <input type="number" id="maximumSignificantDigits" name="maximumSignificantDigits" value="" min="1" max="21" />
+    </div>
+
+    <hr />
+
+    <div>
+      <label for="signDisplay">+/- sign</label>
+      <select id="signDisplay" name="signDisplay">
+        <option value="">auto</option>
+        <option>never</option>
+        <option>always</option>
+        <option>exceptZero</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="useGrouping">grouping</label>
+      <select id="useGrouping" name="useGrouping">
+        <option value="">true</option>
+        <option>false</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="compactDisplay">compact style</label>
+      <select id="compactDisplay" name="compactDisplay">
+        <option value="">short</option>
+        <option>long</option>
+      </select>
+    </div>
+
+    <hr />
+
+    <div>
+      <label for="currency">currency</label>
+      <select id="currency" name="currency">
+        <option>USD</option>
+        <option>EUR</option>
+        <option>GBP</option>
+        <option>CAD</option>
+        <option>AUD</option>
+        <option>ZAR</option>
+        <option>INR</option>
+        <option>CNY</option>
+        <option>JPY</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="currencySign">currency sign</label>
+      <select id="currencySign" name="currencySign">
+        <option value="">standard</option>
+        <option>accounting</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="currencyDisplay">currency style</label>
+      <select id="currencyDisplay" name="currencyDisplay">
+        <option value="">default</option>
+        <option>symbol</option>
+        <option>narrowSymbol</option>
+        <option>code</option>
+        <option>name</option>
+      </select>
+    </div>
+
+    <hr />
+
+    <div>
+      <label for="unit">unit</label>
+      <select id="unit" name="unit">
+        <option>bit</option>
+        <option>byte</option>
+        <option>celsius</option>
+        <option>centimeter</option>
+        <option>day</option>
+        <option>degree</option>
+        <option>fahrenheit</option>
+        <option>foot</option>
+        <option>hour</option>
+        <option>kilobyte</option>
+        <option>liter</option>
+        <option>meter</option>
+        <option>mile</option>
+        <option>month</option>
+        <option>percent</option>
+        <option>week</option>
+        <option>year</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="unitDisplay">unit style</label>
+      <select id="unitDisplay" name="unitDisplay">
+        <option value="">short</option>
+        <option>narrow</option>
+        <option>long</option>
+      </select>
+    </div>
+
+  </form>
+
+  <%- include('./partials/_table.html', { meta }) -%>
+
+</div></main>
+
+<%- include('./partials/_footer.html', { meta }) -%>
+<%- include('./partials/_pagefoot.html', { meta }) -%>

@@ -1,0 +1,45 @@
+<% meta.title = 'list internationalization' %>
+<% meta.menuActive = 'list' %>
+<%- include('./partials/_pagehead.html', { meta }) -%>
+<%- include('./partials/_header.html', { meta }) -%>
+
+<main><div>
+
+  <form id="translate" class="formlinear">
+
+    <div>
+      <label for="list">list</label>
+      <select id="list" name="list">
+        <option value="Chrome,Firefox,Safari,Edge,Opera">browsers</option>
+        <option value="HTML,CSS,JavaScript">web</option>
+        <option value="walk,cycle,car,bus,train,plane">travel</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="type">type</label>
+      <select id="type" name="type">
+        <option value="">default</option>
+        <option>conjunction</option>
+        <option>disjunction</option>
+        <option>unit</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="style">style</label>
+      <select id="style" name="style">
+        <option value="">long</option>
+        <option>short</option>
+        <option>narrow</option>
+      </select>
+    </div>
+
+  </form>
+
+  <%- include('./partials/_table.html', { meta }) -%>
+
+</div></main>
+
+<%- include('./partials/_footer.html', { meta }) -%>
+<%- include('./partials/_pagefoot.html', { meta }) -%>

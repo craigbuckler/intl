@@ -1,21 +1,36 @@
 // date/time handler
-import { resultUpdate } from './result.js';
-import { buildOpt } from './util.js';
+import { resultUpdate, codeUpdate } from './result.js';
 
 const table = document.getElementById('datetable');
+if (table) window.addEventListener('translate', updateHandler);
 
-if (table) window.addEventListener('translate', dateHandler);
-
-
-function dateHandler(e) {
+function updateHandler(e) {
 
   const
-    datetime = e.detail.date + 'T' + e.detail.time,
-    date = new Date(datetime),
-    opt = buildOpt(e.detail, ['date', 'time']);
+    opt = e.detail,
+    datetime = opt.date + 'T' + opt.time,
+    date = new Date(datetime);
 
-  console.log(date, opt);
+  delete opt.date;
+  delete opt.time;
+
+  enableField(opt, opt.dateStyle || opt.timeStyle, ['weekday', 'day', 'month', 'year', 'hour', 'minute', 'second', 'fractionalSecondDigits', 'timeZoneName']);
 
   resultUpdate(locale => new Intl.DateTimeFormat(locale, opt).format(date));
+  codeUpdate(`new Intl.DateTimeFormat(\n  "[locale]",\n  ${ JSON.stringify(opt) }\n).format( new Date("${ datetime }") );`);
+
+}
+
+
+// enable/disable fields
+function enableField(opt, condition, list) {
+
+  list.forEach(f => {
+
+    const i = document.getElementById(f);
+    if (i) i.disabled = !!condition;
+    if (condition) delete opt[f];
+
+  });
 
 }

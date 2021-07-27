@@ -18,12 +18,86 @@
     </div>
 
     <div>
+      <label for="timeZone">time zone</label>
+      <select id="timeZone" name="timeZone">
+        <option value="">default</option>
+        <option>UTC</option>
+        <option>America/Los_Angeles</option>
+        <option>America/Chicago</option>
+        <option>America/New_York</option>
+        <option>Europe/London</option>
+        <option>Europe/Paris</option>
+        <option>Europe/Moscow</option>
+        <option>Asia/Dubai</option>
+        <option>Asia/Kuala_Lumpur</option>
+        <option>Asia/Pyongyang</option>
+        <option>Asia/Tokyo</option>
+        <option>Australia/Adelaide</option>
+        <option>Australia/Sydney</option>
+        <option>Pacific/Chatham</option>
+      </select>
+    </div>
+
+    <hr />
+
+    <div>
+      <label for="calendar">calendar</label>
+      <select id="calendar" name="calendar">
+        <option value="">default</option>
+        <option>buddhist</option>
+        <option>chinese</option>
+        <option>coptic</option>
+        <option>ethiopia</option>
+        <option>ethiopic</option>
+        <option>gregory</option>
+        <option>hebrew</option>
+        <option>indian</option>
+        <option>islamic</option>
+        <option>iso8601</option>
+        <option>japanese</option>
+        <option>persian</option>
+        <option>roc</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="numberingSystem">numbering</label>
+      <select id="numberingSystem" name="numberingSystem">
+        <option value="">default</option>
+        <option>arab</option>
+        <option>arabext</option>
+        <option>bali</option>
+        <option>beng</option>
+        <option>deva</option>
+        <option>fullwide</option>
+        <option>gujr</option>
+        <option>guru</option>
+        <option>hanidec</option>
+        <option>khmr</option>
+        <option>knda</option>
+        <option>laoo</option>
+        <option>latn</option>
+        <option>limb</option>
+        <option>mlym</option>
+        <option>mong</option>
+        <option>mymr</option>
+        <option>orya</option>
+        <option>tamldec</option>
+        <option>telu</option>
+        <option>thai</option>
+        <option>tibt</option>
+      </select>
+    </div>
+
+    <div>
       <label for="hour12">time type</label>
       <select id="hour12" name="hour12">
         <option value="">24 hour</option>
         <option value="true">12 hour</option>
       </select>
     </div>
+
+    <hr />
 
     <div>
       <label for="dateStyle">date style</label>
@@ -37,6 +111,48 @@
     </div>
 
     <div>
+      <label for="weekday">weekday style</label>
+      <select id="weekday" name="weekday">
+        <option value="">none</option>
+        <option>narrow</option>
+        <option>short</option>
+        <option>long</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="day">day style</label>
+      <select id="day" name="day">
+        <option value="">none</option>
+        <option>numeric</option>
+        <option>2-digit</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="month">month style</label>
+      <select id="month" name="month">
+        <option value="">none</option>
+        <option>numeric</option>
+        <option>2-digit</option>
+        <option>narrow</option>
+        <option>short</option>
+        <option>long</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="year">year style</label>
+      <select id="year" name="year">
+        <option value="">none</option>
+        <option>numeric</option>
+        <option>2-digit</option>
+      </select>
+    </div>
+
+    <hr />
+
+    <div>
       <label for="timeStyle">time style</label>
       <select id="timeStyle" name="timeStyle">
         <option value="">none</option>
@@ -47,41 +163,56 @@
       </select>
     </div>
 
+    <div>
+      <label for="hour">hour style</label>
+      <select id="hour" name="hour">
+        <option value="">none</option>
+        <option>numeric</option>
+        <option>2-digit</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="minute">minute style</label>
+      <select id="minute" name="minute">
+        <option value="">none</option>
+        <option>numeric</option>
+        <option>2-digit</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="second">second style</label>
+      <select id="second" name="second">
+        <option value="">none</option>
+        <option>numeric</option>
+        <option>2-digit</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="fractionalSecondDigits">fractional style</label>
+      <select id="fractionalSecondDigits" name="fractionalSecondDigits">
+        <option value="">none</option>
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="timeZoneName">timezone style</label>
+      <select id="timeZoneName" name="timeZoneName">
+        <option value="">none</option>
+        <option>short</option>
+        <option>long</option>
+      </select>
+    </div>
+
   </form>
 
-  <div class="scroller">
-    <table id="datetable" summary="translation">
-      <thead>
-        <tr><th>locale</th><th class="value">date / time</th>
-      </thead>
-      <tbody id="result">
-        <tr><th title="your locale">default</th><td></td></tr>
-        <tr><th title="US English">en-US</th><td></td></tr>
-        <tr><th title="UK English">en-GB</th><td></td></tr>
-        <tr><th title="Canadian English">en-CA</th><td></td></tr>
-        <tr><th title="Australian English">en-AU</th><td></td></tr>
-        <tr><th title="Spanish">es-ES</th><td></td></tr>
-        <tr><th title="Mexican Spanish">es-MX</th><td></td></tr>
-        <tr><th title="French">fr-FR</th><td></td></tr>
-        <tr><th title="German">de-DE</th><td></td></tr>
-        <tr><th title="Italian">it-IT</th><td></td></tr>
-        <tr><th title="Portuguese">pt-PT</th><td></td></tr>
-        <tr><th title="Polish">pl-PL</th><td></td></tr>
-        <tr><th title="Welsh">cy-GB</th><td></td></tr>
-        <tr><th title="Icelandic">is-IS</th><td></td></tr>
-        <tr><th title="Kazakh">kk-KZ</th><td></td></tr>
-        <tr><th title="Afrikaans">af-AF</th><td></td></tr>
-        <tr><th title="Zulu">zu-ZU</th><td></td></tr>
-        <tr><th title="Russian">ru-RU</th><td></td></tr>
-        <tr><th title="Arabic (Saudi Arabia)">ar-SA</th><td></td></tr>
-        <tr><th title="Hebrew">he-HE</th><td></td></tr>
-        <tr><th title="Bengali">bn-BN</th><td></td></tr>
-        <tr><th title="Vietnamese">vi-VI</th><td></td></tr>
-        <tr><th title="Chinese">zh-CN</th><td></td></tr>
-        <tr><th title="Japanese">ja-JP</th><td></td></tr>
-      </tbody>
-    </table>
-  </div>
+  <%- include('./partials/_table.html', { meta }) -%>
 
 </div></main>
 

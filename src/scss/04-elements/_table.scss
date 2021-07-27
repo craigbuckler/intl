@@ -20,6 +20,10 @@ thead {
   border-bottom: 1px solid $color_fore_0;
 }
 
+tbody {
+  cursor: pointer;
+}
+
 th, td {
   text-align: left;
 	vertical-align: middle;
@@ -35,4 +39,9 @@ tr th:first-child {
 
 tbody > :nth-child(odd) {
   background-color: $color_back_1;
+}
+
+tr.active {
+  color: $color_back_0;
+  background-color: $color_hint_1;
 }

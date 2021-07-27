@@ -13,19 +13,20 @@ strong, b {
 }
 
 pre, code {
-  font-family: monospace;
+  font-family: consolas, monospace;
   font-size: 1rem;
   padding: 0.2em 0.5em;
   color: $color_back_0;
-  background-color: $color_hint_0;
-  border: 1px solid $color_back_0;
+  background-color: $color_hint_1;
+  border: 1px solid $color_fore_0;
   border-radius: $layout_border_radius;
 }
 
 pre {
   width: 100%;
-  margin: $layout_padding 0 calc(2 * $layout_padding) 0;
+  margin: 6px 0;
   overflow: auto;
+  user-select: all;
 
   code {
     padding: 0;

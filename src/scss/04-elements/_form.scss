@@ -2,7 +2,7 @@
 input, output, textarea, select, button, .button {
   font-family: inherit;
   font-size: inherit;
-  font-weight: $type_body_bold;
+  font-weight: $type_body_normal;
   letter-spacing: inherit;
   word-spacing: inherit;
   width: 10em;
@@ -24,7 +24,7 @@ select::-ms-expand {
 
 input, textarea, select {
   appearance: none;
-  padding: 1em;
+  padding: 0.8em 0.6em;
   color: $color_fore_0;
   background-color: $color_back_0;
   border: 1px solid $color_hint_1;
@@ -42,7 +42,6 @@ input, textarea {
 
   &:disabled, &:read-only {
     color: $color_hint_1;
-    background-color: $color_hint_1;
   }
 
 }
@@ -55,8 +54,7 @@ select {
   background-repeat: no-repeat;
 
   &:disabled {
-    color: $color_hint_1;
-    background-color: $color_hint_1;
+    color: $color_back_1;
   }
 
 }
@@ -78,6 +76,7 @@ label, .validity {
   font-weight: $type_body_bold;
   padding-left: 1rem;
   color: $color_hint_1;
+  z-index: 1;
 }
 
 // search
@@ -366,7 +365,7 @@ p.validity {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: $layout_padding;
+  gap: calc($layout_padding / 2);
 
   & > div {
 
@@ -376,7 +375,7 @@ p.validity {
       position: absolute;
       top: -0.6em;
       left: 0.6rem;
-      padding: 0 0.5rem;
+      padding: 0 0.3rem;
       background-color: $color_back_0;
     }
 
@@ -384,6 +383,13 @@ p.validity {
       color: $color_hint_0;
     }
 
+  }
+
+  & > hr {
+    flex: 10 0 100%;
+    height: 0;
+    border: 0 none;
+    border-top: 1px dotted $color_hint_0;
   }
 
 }

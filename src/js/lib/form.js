@@ -74,7 +74,7 @@ function raiseEvent() {
 
   // parse form values
   for(const pair of data.entries()) {
-    detail[pair[0]] = pair[1];
+    if (pair[1]) detail[pair[0]] = pair[1] === 'true' ? true : pair[1] === 'false' ? false : pair[1];
   }
 
   // custom event

@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "rm -rf build",
     "init": "npm run clean && npm run final:htm && cp ./src/media ./build -r && cp ./src/root/* ./build -r",
-    "final:htm": "ejs-render --input=./src/html --data=./tokens.json --output=./build",
+    "final:htm": "ejs-render --input=./src/html --data=./tokens.json --output=./build && html-minifier --input-dir ./build/ --file-ext html --output-dir ./build/ --remove-comments --collapse-whitespace",
     "watch:htm": "ejs-render --input=./src/html/ --data=./tokens.json --output=./build --watch",
     "build:css": "postcss src/scss/main.scss -o build/css/main.css --no-map",
     "watch:css": "postcss src/scss/main.scss -o build/css/main.css --env development -m -w --verbose",
@@ -40,10 +40,11 @@
   "devDependencies": {
     "@rollup/plugin-replace": "3.0.0",
     "autoprefixer": "10.3.1",
-    "browser-sync": "2.27.4",
+    "browser-sync": "2.27.5",
     "concurrently": "6.2.0",
     "cssnano": "5.0.7",
     "ejs-render": "1.0.3",
+    "html-minifier": "4.0.0",
     "postcss": "8.3.6",
     "postcss-advanced-variables": "3.0.1",
     "postcss-assets": "6.0.0",

@@ -1,0 +1,91 @@
+<% meta.title = 'comparison internationalization' %>
+<% meta.menuActive = 'compare' %>
+<%- include('./partials/_pagehead.html', { meta }) -%>
+<%- include('./partials/_header.html', { meta }) -%>
+
+<main><div>
+
+  <form id="translate" class="formlinear">
+
+    <div>
+      <label for="value1">stringA</label>
+      <select id="value1" name="value1">
+        <option>a</option>
+        <option>á</option>
+        <option>A</option>
+        <option>z</option>
+        <option>Z</option>
+        <option>1</option>
+        <option>2</option>
+        <option>10</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="value2">stringB</label>
+      <select id="value2" name="value2">
+        <option>a</option>
+        <option>á</option>
+        <option>A</option>
+        <option>z</option>
+        <option>Z</option>
+        <option>1</option>
+        <option>2</option>
+        <option>10</option>
+      </select>
+    </div>
+
+    <hr />
+
+    <div>
+      <label for="usage">usage</label>
+      <select id="usage" name="usage">
+        <option value="">sort</option>
+        <option>search</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="sensitivity">sensitivity</label>
+      <select id="sensitivity" name="sensitivity">
+        <option value="">default</option>
+        <option>base</option>
+        <option>accent</option>
+        <option>case</option>
+        <option>variant</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="numeric">numeric</label>
+      <select id="numeric" name="numeric">
+        <option value="">false</option>
+        <option>true</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="ignorePunctuation">punctuation</label>
+      <select id="ignorePunctuation" name="ignorePunctuation">
+        <option value="">use</option>
+        <option value="true">ignore</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="caseFirst">case first</label>
+      <select id="caseFirst" name="caseFirst">
+        <option value="">false</option>
+        <option>lower</option>
+        <option>upper</option>
+      </select>
+    </div>
+
+  </form>
+
+  <%- include('./partials/_table.html', { meta }) -%>
+
+</div></main>
+
+<%- include('./partials/_footer.html', { meta }) -%>
+<%- include('./partials/_pagefoot.html', { meta }) -%>
