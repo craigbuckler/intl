@@ -33,7 +33,7 @@ input, textarea, select {
 
   &:focus {
     color: $color_fore_0;
-    border-color: $color_hint_0;
+    border-color: $color_fore_0;
   }
 
 }
@@ -380,7 +380,7 @@ p.validity {
     }
 
     &:focus-within:not(.invalid) > label {
-      color: $color_hint_0;
+      color: $color_fore_0;
     }
 
   }
