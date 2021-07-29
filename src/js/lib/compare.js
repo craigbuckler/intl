@@ -12,7 +12,7 @@ function updateHandler(e) {
     value2 = opt.value2;
 
   delete opt.value1;
-  delete opt.value1;
+  delete opt.value2;
 
   resultUpdate(locale => {
 

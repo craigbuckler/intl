@@ -17,7 +17,15 @@ table.addEventListener('click', rowClick);
 export function resultUpdate(updater) {
 
   result.forEach(r => {
-    r.output.textContent = updater(r.locale);
+
+    let res = 'input error';
+    try {
+      res = updater(r.locale);
+    }
+    catch (e) {}
+
+    r.output.textContent = res;
+
   });
 
 }
