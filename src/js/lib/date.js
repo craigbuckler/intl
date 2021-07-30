@@ -8,16 +8,28 @@ function updateHandler(e) {
 
   const
     opt = e.detail,
+    method = opt.method || 'format',
     datetime = opt.date + 'T' + opt.time,
-    date = new Date(datetime);
+    date = new Date(datetime),
+    datetime2 = opt.date2 + 'T' + opt.time2,
+    date2 = method === 'formatRange' ? new Date(datetime2) : null;
 
+  delete opt.method;
   delete opt.date;
   delete opt.time;
+  delete opt.date2;
+  delete opt.time2;
 
+  enableField(opt, method !== 'formatRange', ['date2', 'time2']);
   enableField(opt, opt.dateStyle || opt.timeStyle, ['weekday', 'day', 'month', 'year', 'hour', 'minute', 'second', 'fractionalSecondDigits', 'timeZoneName']);
 
-  resultUpdate(locale => new Intl.DateTimeFormat(locale, opt).format(date));
-  codeUpdate(`new Intl.DateTimeFormat(\n  "[locale]",\n  ${ JSON.stringify(opt) }\n).format( new Date("${ datetime }") );`);
+  resultUpdate(locale => {
+
+    const dt = new Intl.DateTimeFormat(locale, opt);
+    return date2 ? dt.formatRange(date, date2) : dt.format(date);
+
+  });
+  codeUpdate(`new Intl.DateTimeFormat(\n  "[locale]",\n  ${ JSON.stringify(opt) }\n).${ method }( new Date("${ datetime }")${ date2 ? `, new Date("${ datetime2 }")` : '' } );`);
 
 }
 

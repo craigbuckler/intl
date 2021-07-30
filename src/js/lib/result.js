@@ -18,11 +18,11 @@ export function resultUpdate(updater) {
 
   result.forEach(r => {
 
-    let res = 'input error';
+    let res = 'error';
     try {
       res = updater(r.locale);
     }
-    catch (e) {}
+    catch (e) { console.log(e); }
 
     r.output.textContent = res;
 

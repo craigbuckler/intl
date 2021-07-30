@@ -8,16 +8,6 @@
   <form id="translate" class="formlinear">
 
     <div>
-      <label for="date">date</label>
-      <input type="date" id="date" name="date" value="2025-09-05" required />
-    </div>
-
-    <div>
-      <label for="time">time</label>
-      <input type="time" id="time" name="time" value="01:23" required />
-    </div>
-
-    <div>
       <label for="timeZone">time zone</label>
       <select id="timeZone" name="timeZone">
         <option value="">default</option>
@@ -36,6 +26,36 @@
         <option>Australia/Sydney</option>
         <option>Pacific/Chatham</option>
       </select>
+    </div>
+
+    <div>
+      <label for="date">date</label>
+      <input type="date" id="date" name="date" value="2025-09-05" required />
+    </div>
+
+    <div>
+      <label for="time">time</label>
+      <input type="time" id="time" name="time" value="01:23" required />
+    </div>
+
+    <hr />
+
+    <div>
+      <label for="method">method</label>
+      <select id="method" name="method">
+        <option value="format">format()</option>
+        <option value="formatRange">formatRange()</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="date2">date 2</label>
+      <input type="date" id="date2" name="date2" value="2025-09-05" required />
+    </div>
+
+    <div>
+      <label for="time2">time 2</label>
+      <input type="time" id="time2" name="time2" value="02:23" required />
     </div>
 
     <hr />

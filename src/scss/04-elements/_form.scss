@@ -41,7 +41,7 @@ input, textarea, select {
 input, textarea {
 
   &:disabled, &:read-only {
-    color: $color_hint_1;
+    color: $color_back_1;
   }
 
 }
